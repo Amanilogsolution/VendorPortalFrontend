@@ -1,0 +1,42 @@
+#pagination{
+    margin-left: 10%;
+    margin-right: 10%;
+    overflow-x: auto;
+}
+
+.datatable{
+    margin-bottom: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.datatableExtension{
+    width: 40%;
+}
+
+.datatableExtensionAction{
+    width: 70%;
+    margin-right: 2%;
+    margin-left: 10%;
+}
+.inputSearch{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    text-align: center;
+    width: 60%;
+}
+
+.form-label:hover{
+    cursor: pointer;
+}
+
+.select{
+    width:20%;
+    height: 80px;
+       }
+

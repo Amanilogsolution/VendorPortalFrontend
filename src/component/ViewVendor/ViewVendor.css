@@ -1,0 +1,12 @@
+.View-vendor{
+    height: 100%;
+    background-image: url('https://wallpapercave.com/wp/wp2074610.jpg');
+    background-size: cover;
+}
+#image{
+    margin-top: 4%;
+}
+.Images{
+    border-radius: 30%;
+    margin-left: 30%;
+}
