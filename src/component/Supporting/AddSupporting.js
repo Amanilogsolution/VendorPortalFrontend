@@ -88,30 +88,36 @@ const AddSupporting = () => {
 
 
     return (
+        <>
+        <NavPage />
         <div className="Add-Supporting-page">
-            <NavPage />
-            <div className="row d-flex justify-content-center align-items-center" style={{ overflow: "hidden" }}>
-                <div className="col col-md-6 ">
-                    <h2>Add Supporting</h2>
-                    <div className="card p-3 my-5">
+            
+            <div className="row d-flex justify-content-center align-items-center" style={{overflow: "hidden",width:"100%" }}>
+                <div className="col col-sm-6 ">
+                    <h2 className='add_Supp'>Add Supporting</h2>
+                    <div id="card_main_div" className="card p-3 my-5">
                         <div>
                             {totalImages.map((element, index) => (
                                 <div>
-                                    <div className='card p-3 border border-dark'>
+                                    <div className='card p-3'>
                                         <div className="mb-3">
                                             <label htmlFor="Reference_no" className="form-label">Reference Number <span style={{ color: "red" }}>*</span></label>
-                                            <input className="form-control border border-dark" type="text" id="Reference_no" onChange={(e) => {
+                                            <input className="form-control" type="text" id="Reference_no" onChange={(e) => {
                                                 const id = e.target.value
                                                 setTypees(id)
                                             }} required="required" />
                                         </div>
+
                                         <div className="mb-3">
-                                            <select className="form-select w-100 p-2 border border-dark" onClick={handleClickselect}>
-                                                <option selected>Open this select menu *</option>
+                                            <label>Open this select menu  <span style={{ color: "red" }}>*</span></label>
+                                            <select className="form-select w-100 p-2" onClick={handleClickselect}>
+                                                <option selected>Choose...</option>
                                                 <option value="LR/AWB" >LR/AWB</option>
                                                 <option value="Other">Other</option>
                                             </select>
                                         </div>
+
+
                                         <div className="mb-3">
                                             <label htmlFor="Upload_Date" className="form-label">Upload Document <span style={{ color: "red" }}>*</span></label>
                                             <input className="form-control" type="file" name='images' id="Upload_Document"
@@ -123,27 +129,35 @@ const AddSupporting = () => {
                                         </div>
                                         {/* <button onClick={handleClick}>Preview</button> */}
                                     </div>
-                                    <br />
+                                    {/* <br /> */}
                                 </div>
+
                             ))}
-                            <button type="button" class="btn btn-primary" style={{ marginRight: "8%" }} onClick={handleAdd}>Add</button>
-                            <button type="button" class="btn btn-danger" onClick={handleDelete}>Cancel</button>
+                            <hr style={{marginTop:"-1px"}}/>
+                            <button type="button" class="btn mx-2" id="add_btn" onClick={handleAdd}>Add</button>
+                            <button type="button" class="btn btn-secondary" onClick={handleDelete}>Cancel</button>
                             <br />
                             {show && (
                                 <img src={showImage} width="10%" height="10%" />)}
                             <br />
+
+
+
                         </div>
+
                     </div>
                     <div className='buttons'>
-                        <button type='reset' className="btn btn-danger" value='reset'>Reset </button>
-                        <button type="button" class="btn btn-danger" onClick={(e) => { e.preventDefault(); window.location.href = '/Supporting' }}>Return</button>
-                        <button type="button" class="btn btn-success" style={{ marginRight: "5%" }} onClick={send}>Save</button>
+                        <button type='reset' className="btn btn-secondary mx-2" value='reset'>Reset </button>
+                        <button type="button" class="btn btn-secondary" onClick={(e) => { e.preventDefault(); window.location.href = '/Supporting' }}>Return</button>
+                        <button type="button" class="btn mx-2" style={{ marginRight: "5%",background:"rgb(253, 76, 27)",color:"white" }} onClick={send}>Save</button>
                     </div>
                 </div>
             </div>
             <br />
-            <Homefooter />
+            
         </div>
+        <Homefooter />
+        </>
     )
 }
 

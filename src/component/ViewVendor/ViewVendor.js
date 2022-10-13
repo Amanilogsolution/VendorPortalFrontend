@@ -28,9 +28,9 @@ function ViewVendor(){
         <NavPage/>
                 <div className="container">
                     <div className="row d-flex justify-content-center align-items-center" >
-                        <div className="col col-md-6 ">
-                            <h2> View Vendor Details</h2>
-                            <div className="card p-3 my-5">
+                        <div id="total_view_card" className="col col-md-6 ">
+                            <h2 className='text-center'> View Vendor Details</h2>
+                            <div id="view_card" className="card p-3 my-4">
                                 <form>
                                     <div className="mb-3">
                                         <div className="mb-3">
@@ -68,7 +68,7 @@ function ViewVendor(){
                                     <label for="exampleInputPassword1" class="form-label">Upload Document</label>
                                     <input type="file" class="form-control" id="exampleInputPassword1" />
                                 </div> */}
-                                        <button type="submit" onClick={handleClick} className="btn btn-primary">Home</button>
+                                        <button id='link_supp' type="submit" onClick={handleClick} className="btn">Home</button>
                                     </div>
                                 </form>
                             </div>

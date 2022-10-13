@@ -1,7 +1,9 @@
 .wrapper.wrapper-home{
-    height: 100vh;
-    background-image: url('https://wallpapercave.com/wp/wp2074610.jpg');
+    height: 86.5vh;
+    background-image: url("../images/homebg.jpg");
     background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
 .embetted_facebook{
@@ -9,6 +11,19 @@
     height: 80vh;
     width: 50%;
     float: left;
+}
+.for_opacity{
+    height: 100vh;
+    background-size: cover;
+    background-position:center;
+}
+.para{
+    color:rgb(47, 47, 51);
+    font-size:145%;
+    border-bottom:3px solid rgb(47, 47, 51);
+    padding:2px 0;
+    text-align: center;
+
 }
 
 
@@ -47,5 +62,26 @@
         margin-right: 10%;
         margin-left: 10%;
     }
+   
+}
+.undrawimg{
+    width: 500px;
+}
+@media (max-width:650px) {
+ .main_para{
+    display: none;
+ }
+ .undrawimg{
+    width: 390px;
+}
+
+}
+@media (max-width:400px) {
+    .main_para{
+       display: none;
+    }
+    .undrawimg{
+       width: 300px;
+   }
    
 }

@@ -1,7 +1,6 @@
 .View-vendor{
     height: 100%;
-    background-image: url('https://wallpapercave.com/wp/wp2074610.jpg');
-    background-size: cover;
+    background:rgb(247,244,244);
 }
 #image{
     margin-top: 4%;
@@ -9,4 +8,13 @@
 .Images{
     border-radius: 30%;
     margin-left: 30%;
+}
+#total_view_card{
+    margin: 120px 0 40px 0;
+}
+#view_card{
+    box-shadow: 1px 1px 4px 1px gray;
+}
+#view_card input{
+    background: rgb(216,200,200);
 }
