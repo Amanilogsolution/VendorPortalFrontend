@@ -8,7 +8,7 @@ import Invoices from './component/Invoices/Invoices';
 import PrivatRoute from './component/HOC/PrivateRoute';
 import './App.css'
 import ViewVendor from './component/ViewVendor/ViewVendor';
-import InvoicesPractice from './component/Practice/InvoicePractice';
+import InvoicesPractice from './component/Invoices/Invoices';
 import Pendinginvoices from './component/PendingInvoices/PendingInvoices';
 import Totaldata from './component/TotalInvoices/TotalInvoice1';
 import SupporingPage from './component/Supporting/Supporting';
@@ -20,6 +20,10 @@ import EditInvoices from './component/TotalInvoices/EditInvoices';
 import EditInvoicesDetails from './component/TotalInvoices/EditInvoicesDetails';
 import TotalLR from './component/LR/Lr';
 import DeliveresdLR from './component/LR/DeliveresdLR';
+import InsertGuard from './component/Guards/GuardsMaster/InsertGuard';
+import TotalGuards from './component/Guards/GuardsMaster/TotalGuards'
+import GuardsLogs from './component/Guards/GuardsLogs/guardslogs'
+import GuardsLogOut from './component/Guards/GuardsLogs/guardlogoutlogs';
 
 
 function App() {
@@ -34,7 +38,6 @@ function App() {
       <PrivatRoute expact path="/TotalInvoices" component={Totaldata}/>
       <PrivatRoute exact path="/InvoicesProgress" component={InvoicesProgress} />
 
-
       <Route expact path="/Invoices" component={Invoices}/>
       <Route exact path="/Supporting" component={SupporingPage}/>
       <Route exact path="/AddSupporting" component={AddSupporting}/>
@@ -47,6 +50,11 @@ function App() {
       <Route expact path="/InvoicesPractice" component={InvoicesPractice}/>
       <Route expact path="/InTransit" component={TotalLR}/>
       <Route expact path="/Delivered" component={DeliveresdLR}/>
+      <Route expact path="/InsertGuard" component={InsertGuard}/>
+      <Route expact path="/TotalGuards" component={TotalGuards}/>
+      <Route expact path="/guardslogs" component={GuardsLogs}/>
+      <Route expact path="/guardslogout" component={GuardsLogOut}/>
+
       </Router>
     </div>
   );

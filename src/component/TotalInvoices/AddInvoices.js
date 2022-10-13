@@ -81,7 +81,7 @@ const AddInvoices = () => {
     }
     return(
         <div className="Add-Supporting-page">
-        <NavPage/>
+          <NavPage/>
                     <div className="row d-flex justify-content-center align-items-center" >
                         <div className="col col-md-6 ">
                             <h2>Add Invoice</h2>

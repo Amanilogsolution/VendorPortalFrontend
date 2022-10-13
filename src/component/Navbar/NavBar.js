@@ -37,6 +37,11 @@ function NavPage() {
               <Nav.Item>
                 <Nav.Link href="/home">Home</Nav.Link>
               </Nav.Item>
+              <NavDropdown title="Guards" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="/TotalGuards"> Show Guards </NavDropdown.Item> 
+              <NavDropdown.Item href="/guardslogs"> Guard Login </NavDropdown.Item>   
+              <NavDropdown.Item href="/guardslogout"> Guard Logout </NavDropdown.Item>            
+              </NavDropdown>
               <NavDropdown title="My Invoices" id="navbarScrollingDropdown">
               <NavDropdown.Item href="/TotalInvoices"> View & Add </NavDropdown.Item>       
           {/* <NavDropdown.Item href="/InvoicesProgress">Paid Invoices</NavDropdown.Item>
