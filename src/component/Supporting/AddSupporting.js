@@ -24,8 +24,6 @@ const AddSupporting = () => {
 
     const send = async (e) => {
         e.preventDefault()
-
-        console.log(typees)
         const values = [...value, typees]
         // setValues([...value,typees])
         const lrvalues = [...lr, refernace_no]
@@ -37,16 +35,9 @@ const AddSupporting = () => {
         formValues.forEach((pic, i) => {
             data.append('images', pic)
         })
-        console.log(data)
         const result = await MultiplefileUpload(data)
-        console.log(result)
-
-        console.log('Aman', result, values)
-
         result.map(async (url, index) => {
-
             const result = await GetLrdata(values[index], url, lrvalues[index])
-            console.log(result)
             if (result) {
                 window.location.href = '/Supporting'
             }
