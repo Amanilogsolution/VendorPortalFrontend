@@ -64,12 +64,15 @@ const InsertGuard = () => {
     }
 
     return (
-        <div className="Add-Supporting-page">
-            <NavPage />
-            <div className="row d-flex justify-content-center align-items-center" >
+        <>
+        <NavPage />
+        <div className="Total_Glogs">
+            
+            <div className="row d-flex justify-content-center align-items-center" style={{width:"100%"}}>
                 <div className="col col-md-6">
                     <h2>Add Guard</h2>
-                    <div className="card p-3 my-3">
+                    <h2 className='text-center mt-5'>Add Guard</h2>
+                    <div className="card p-3 my-3 mb-5">
                         <form>
 
                             <div className=' row ' style={{marginBottom:"6px"}} >
@@ -90,7 +93,7 @@ const InsertGuard = () => {
                                     <label htmlFor="Reference_no" className="form-label">Location <span style={{ color: "red" }}>*</span></label>
                                     <div className="mb-3">
                                         <select className="form-select w-100 p-2" id="location">
-                                            <option selected hidden>Select Location</option>
+                                            <option selected value="" hidden>Select Location</option>
                                             {
                                                 location.map(items => (
                                                     <option value={items.WHid} >{items.WHname}</option>
@@ -165,15 +168,15 @@ const InsertGuard = () => {
 
 
 
-                                <div className={`border-top card-footer `}>
-                                    <button type='reset' className="btn btn-danger" value='reset'>Reset </button>
-                                    <button style={{ marginLeft: '20px' }} className="btn btn-danger" onClick={(e) => {
+                                <div className='my-3'>
+                                    <button type='reset' id="link_supp" className="btn" value='reset'>Reset </button>
+                                    <button style={{ marginLeft: '20px' }} className="btn btn-secondary" onClick={(e) => {
                                         e.preventDefault()
                                         window.location.href = '/TotalGuards'
                                     }}>
                                         Cancel
                                     </button>
-                                    <button type="submit" style={{ marginLeft: '20px' }} className="btn btn-success" onClick={handleClick}>Save</button>
+                                    <button id="add_btn" type="submit" style={{ marginLeft: '20px' }} className="btn" onClick={handleClick}>Save</button>
                                 </div>
 
                             </div>
@@ -181,10 +184,11 @@ const InsertGuard = () => {
                     </div>
                 </div>
             </div>
-            <Homefooter />
+            
 
         </div>
-
+        <Homefooter />
+        </>
     )
 }
 

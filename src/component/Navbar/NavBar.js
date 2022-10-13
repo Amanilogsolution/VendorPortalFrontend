@@ -44,8 +44,8 @@ function NavPage() {
   }
   return (
     <>
+   
 
-      {/* <nav class={navbar ? 'navbar active navbar-expand-lg':'navbar navbar-expand-lg'}> */}
       <nav class={'navbar navbar-expand-lg navbar-light'}>
         <div class="container-fluid">
           <a><img style={{ width: "80px", margin: "-15px 0" }} src={logo}></img></a>
@@ -61,6 +61,17 @@ function NavPage() {
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/home">Home</a>
               </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Guard
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/TotalGuards">Show Guards</a></li>
+                  <li><a class="dropdown-item" href="/guardslogs">Guard Login</a></li>
+                  <li><a class="dropdown-item" href="/guardslogout"> Guard Logout</a></li>
+
+                </ul>
+              </li>
 
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -68,6 +79,7 @@ function NavPage() {
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="/TotalInvoices">View & Add</a></li>
+
                 </ul>
               </li>
               <li class="nav-item dropdown">
