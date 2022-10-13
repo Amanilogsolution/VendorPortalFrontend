@@ -1,3 +1,11 @@
 .EyeView{
     margin-right: 2%;
 }
+.DataTable{
+    margin-bottom: 10vh;
+}
+@media screen and (min-width: 1400px) {
+    .DataTable{
+        margin-bottom: 25vh;
+    }
+}

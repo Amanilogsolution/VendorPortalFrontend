@@ -1,0 +1,139 @@
+.dad_div {
+    background: url("../../images/loginbg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    position: relative;
+}
+
+/* .main_login{
+    height:100vh;
+} */
+.dad_div .heading {
+    text-align: center;
+    padding: 14px 0;
+    color: white;
+}
+
+.div_for_content {
+    width: 60%;
+    color: white;
+}
+
+.logininside {
+    background: rgb(227,212,212);
+    padding: 30px 20px;
+    border-radius: 4px;
+    box-shadow: 14px 14px 6px 1px gray;
+    height: 380px;
+    width: 23%;
+}
+
+.awl_logo {
+    width: 20%
+}
+
+.login_btn {
+    margin-top: 40px;
+    border: none;
+    padding: 6px 0;
+    color: white;
+    background-color: rgb(253, 76, 27);
+    border-radius: 10px;
+    width: 100%
+}
+
+.login_btn:hover {
+    background: rgb(209, 65, 25);
+}
+
+#login_icon {
+    font-size: 27px;
+    margin-top: 5px;
+    margin-right: 2px;
+    cursor: pointer;
+}
+
+.logininside input {
+    background: none;
+    border: none;
+    margin-left: 3px;
+    width: 90%;
+}
+
+.logininside input:focus {
+    background: none;
+    outline: none;
+}
+
+.loginbox {
+    margin: 14vh auto;
+    justify-content: center;
+    display: flex;
+}
+.user_pass{
+    display: flex;
+     border-bottom: 3px solid rgb(27, 31, 38)
+}
+
+@media screen and (min-device-width: 1020px) {
+    .login_btn {
+        width: 198%
+    }
+
+}
+
+.imgicon {
+    width: 500px;
+}
+
+.login_footer {
+    padding: 10px 0;
+    text-align: center;
+    background: rgb(227,212,212);
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    font-size: 15px;
+}
+
+@media screen and (min-device-width:0px) and (max-device-width: 1100px) {
+    .loginbox {
+        display: block;
+        /* border: 1px solid black; */
+        margin-top: -4px;
+    }
+
+    .div_for_content {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .logininside {
+        width: 320px;
+        margin: auto auto
+    }
+
+    .dad_div {
+        height: 130vh;
+    }
+    .awl_logo {
+        width: 100px
+    }
+    .dad_div .heading {
+        text-align: center;
+        padding: 14px 0;
+        color: rgb(33,37,41);
+        background:rgb(227,212,212) ;
+    }
+
+}
+@media screen and (min-device-width:0px) and (max-device-width: 310px) {
+    .logininside {
+        width: 250px;
+        margin: auto auto
+    }
+}

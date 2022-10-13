@@ -1,19 +1,17 @@
 
 import React from "react";
 import './footer.css'
-import { ImPhone } from "react-icons/im";
-import { IoMdMail } from "react-icons/io";
-import {FaFacebook} from "react-icons/fa";
-import {FaTwitterSquare} from "react-icons/fa";
-import {FaInstagramSquare} from "react-icons/fa";
-import {FaLinkedin,FaYoutube} from "react-icons/fa"
-
+// import { ImPhone } from "react-icons/im";
+// import { IoMdMail } from "react-icons/io";
+import {FaLinkedin,FaYoutube,FaRegCopyright,FaInstagramSquare,FaTwitterSquare,FaFacebook} from "react-icons/fa"
 
 function Homefooter() {
   return (
     <div className="Homefooter">
-      <footer className="bg-light text-white p-3"style={{backgroundImage:`url("https://khatabook-assets.s3.amazonaws.com/static/images/index/footerbg.jpg")`}}>
-        <div className="container">
+      <footer className=" text-white p-3"
+      // style={{backgroundImage:`url("https://khatabook-assets.s3.amazonaws.com/static/images/index/footerbg.jpg")`}}
+      >
+        <div>
           <div className="row text-dark text-left" >
             {/* <div className="col-sm-3">
               <h4 style={{textDecoration:"underline"}}>Company Profile</h4>
@@ -28,28 +26,28 @@ function Homefooter() {
                 warehousing, etc.
               </p>
             </div> */}
-            <div className="col-sm-2" >     
-              <h4 style={{textDecoration:"underline"}}>About Us</h4>
-              <ul style={{listStyle:"none"}} className="footerlink">
-              <li >
+            {/* <div className="d-flex col-sm" >     
+              <h4>About Us</h4>
+              <ul style={{listStyle:"none"}} className="footerlink d-flex">
+              <li className="mx-3" >
                 <a className="link-warning text-decoration-none view" href="https://www.awlindia.com/about-us" target="_blank">Executive Bios</a>
               </li>
-              <li><a className="link-warning text-decoration-none" id="ahover" href="https://www.awlindia.com/about-us#sustainability" target="_blank"
+              <li className="mx-3"><a className="link-warning text-decoration-none" id="ahover" href="https://www.awlindia.com/about-us#sustainability" target="_blank"
                 >
                   Sustainibilty & CSR
                 </a>
               </li>
-              <li>
+              <li className="mx-3">
                 <a className="link-warning text-decoration-none"id="ahover" href="https://www.awlindia.com/blog-page" target="_blank">
                   Blogs & Industry News
                 </a>
               </li>
-              <li>
+              <li className="mx-3">
                 <a className="link-warning text-decoration-none" href="https://www.awlindia.com/about-us-ethics" target="_blank">
                   Ethics Point - Mission
                 </a>
               </li>
-              <li>
+              <li className="mx-3">
                 <a className="link-warning text-decoration-none"
                   href="https://www.awlindia.com/press-release"
                   target="_blank"
@@ -57,7 +55,7 @@ function Homefooter() {
                   Press Release
                 </a>
               </li>
-              <li>
+              <li className="mx-3">
                 <a className="link-warning text-decoration-none"
                   href="https://www.awlindia.com/shipping-and-return"
                   target="_blank"
@@ -65,7 +63,7 @@ function Homefooter() {
                   Shipping & Return
                 </a>
               </li>
-              <li>
+              <li className="mx-3">
                 <a className="link-warning text-decoration-none"
                   href="https://www.awlindia.com/privacy-policy"
                   target="_blank"
@@ -74,9 +72,9 @@ function Homefooter() {
                 </a>
               </li>
               </ul>
-            </div>
-            <div className="col-sm-3">
-              <h5 style={{textDecoration:"underline"}}>Our Expertize</h5>
+            </div> */}
+            {/* <div className="col-sm-3">
+              <h5>Our Expertize</h5>
               <ul style={{listStyle:"none"}} className="footerlink">
               <li>
                 <a className="link-warning text-decoration-none" href="https://www.awlindia.com/warehousing" target="_blank">
@@ -131,12 +129,12 @@ function Homefooter() {
                 </a>
               </li>
               </ul>
-            </div>
+            </div> */}
 
             
-
+{/* 
             <div className="col-sm-3">
-              <h5 style={{textDecoration:"underline"}}>Address</h5>
+              <h5>Address</h5>
               <p>
                 AWL India Private Limited
                 <br />
@@ -153,48 +151,62 @@ function Homefooter() {
               <p>
                 <IoMdMail /> info@awlindia.com
               </p>
-            </div>
-            <div className="col-sm-1">
-              <h5 style={{textDecoration:"underline"}}>Links</h5>
+            </div> */}
+            
+
+           <p className="text-center">Copyright <FaRegCopyright style={{marginBottom:"3px"}}/> 2022-2023 vendorportal.All right.reserved</p>
+            <div className="d-flex justify-content-center">
+              <h5 className="mx-2">Links</h5>
               <p>
-                <a href="https://www.facebook.com/awlindia/" target="_blank">
-                  <FaFacebook fontSize="1.5em" color="#ffcd3a"/>
+                <a className="mx-2" href="https://www.facebook.com/awlindia/" target="_blank">
+                  <FaFacebook fontSize="1.5em" color="rgb(253, 76, 27)"/>
                 </a>
               </p>
               <p>
                 <a
+                className="mx-2"
                   href="https://twitter.com/awlindia"
                   target="_blank"
                 >
-                  <FaTwitterSquare fontSize="1.5em" color="#ffcd3a"/>
+                  <FaTwitterSquare fontSize="1.5em" color="rgb(253, 76, 27)"/>
                 </a>
               </p>
               <p>
                 <a
+                className="mx-2"
                   href="https://www.instagram.com/awlindia/"
                   target="_blank"
                 >
-                 <FaInstagramSquare fontSize="1.5em" color="#ffcd3a"/>
+                 <FaInstagramSquare fontSize="1.5em" color="rgb(253, 76, 27)"/>
                 </a>
               </p>
               <p>
                 <a
+                className="mx-2"
                   href="https://www.linkedin.com/company/accelerated-warehousing-logistics-pvt--ltd-/mycompany/"
                   target="_blank"
                 >
-                  <FaLinkedin fontSize="1.5em" color="#ffcd3a"/>
+                  <FaLinkedin fontSize="1.5em" color="rgb(253, 76, 27)"/>
                 </a>
               </p>
               <p>
                 <a
+                className="mx-2"
                   href="https://www.awlindia.com/freight-forwarding"
                   target="_blank"
                 >
-                <FaYoutube fontSize="1.5em" color="#ffcd3a"/>
+                <FaYoutube fontSize="1.5em" color="rgb(253, 76, 27)"/>
                 </a>
               </p>
-             
+              <div className="for_about_contact">
+              <h6 className="mx-2"><a href="https://www.awlindia.com/" style={{color:"rgb(42, 40, 40)",textDecoration:"none"}}>About Us</a></h6>
+              <h6 className="mx-2"><a href="info@awlindia.com" style={{color:"rgb(42, 40, 40)",textDecoration:"none"}}>Contact Us</a></h6>
+              </div>
             </div>
+            <div className="about_contact_for_sm">
+              <h6 className="mx-2"><a href="https://www.awlindia.com/" style={{color:"rgb(42, 40, 40)",textDecoration:"none"}}>About Us</a></h6>
+              <h6 className="mx-2"><a href="info@awlindia.com" style={{color:"rgb(42, 40, 40)",textDecoration:"none"}}>Contact Us</a></h6>
+              </div>
           </div>
         </div>
       </footer>

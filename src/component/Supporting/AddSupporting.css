@@ -1,5 +1,45 @@
 .buttons{
     display: flex;
-    justify-content: space-between;
-    margin-left: 60%;
+    margin-bottom: 50px;
+}
+.add_Supp{
+    margin-top: 90px;
+    text-align: center;
+    margin-bottom: -20px;
+    color: rgb(71, 70, 70);
+}
+.Add-Supporting-page{
+    background: rgba(212, 190, 190, 0.176);
+    /* border: 1px solid red; */
+}
+.card{
+    background:rgb(239, 225, 225);
+    
+    border: none;
+}
+.card label{
+  font-weight: 600;
+  color: rgb(58, 58, 58);
+}
+.card input{
+    background:rgba(208, 191, 191, 0.738);
+    border: 1px solid rgb(208, 191, 191);
+    
+}
+.card select{
+    background:rgb(208, 191, 191);
+     border: 1px solid rgb(208, 191, 191);
+}
+.card input:focus{
+    background:rgb(208, 191, 191);
+}
+#add_btn{
+    color: white;
+    background:rgb(253, 76, 27);
+}
+#add_btn:hover{
+    background:rgb(207, 64, 24);
+}
+#card_main_div{
+    box-shadow: 1px 1px 3px 1px gray;
 }

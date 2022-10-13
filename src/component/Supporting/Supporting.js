@@ -1,94 +1,98 @@
 import React, { useEffect, useState } from 'react';
 import NavPage from '../Navbar/NavBar';
-import {ViewSupportingData} from '../../api';
+import { ViewSupportingData } from '../../api';
 import ReactPagination from 'react-paginate';
 import Homefooter from '../footer/footer';
 import Datatable from 'react-data-table-component';
 import DataTableExtensions from 'react-data-table-component-extensions';
 import 'react-data-table-component-extensions/dist/index.css';
+import './Supporting.css'
 
-const columns =[
+const columns = [
     {
         name: "Upload Date",
         selector: "Upload_Date",
         sortable: true
-      },
-      {
+    },
+    {
         name: "Reference Number",
         selector: "Reference_Number",
         sortable: true
-      },
-      {
+    },
+    {
         name: "Reference_Type",
         selector: "Reference_Type",
         sortable: true
-      },
-      {
+    },
+    {
         name: "Invoice Number",
         selector: "Invoice_Number",
         sortable: true
-      },
-      {
+    },
+    {
         name: "Actions",
         sortable: false,
-    
+
         selector: "null",
         cell: (row) => [
-            <a title='View Document' style={{marginRight:"8px"}} target="_blank" href={`${row.Upload_Document}`}>View</a>,
-            <a title='View Document'onClick={()=> localStorage.setItem('Supportno',`${row.Reference_Number}`)} href="EditSupporting">Edit</a>
+            <a title='View Document' style={{ marginRight: "8px" }} target="_blank" href={`${row.Upload_Document}`}>View</a>,
+            <a title='View Document' onClick={() => localStorage.setItem('Supportno', `${row.Reference_Number}`)} href="EditSupporting">Edit</a>
         ]
-      }
+    }
 ]
 
 const SupporingPage = () => {
-    const [data,setData] = useState([]);
+    const [data, setData] = useState([]);
 
-    const [lastpage,SetLastPage] = useState('')
+    const [lastpage, SetLastPage] = useState('')
     const [currentPage, setCurrentPage] = useState(1);
 
 
-    useEffect(()=>{
-        const getSupporting = async()  => {
+    useEffect(() => {
+        const getSupporting = async () => {
             console.log(currentPage)
             const result = await ViewSupportingData()
             console.log(result.data)
             setData(result.data)
 
-             const totalData = result.count[0]['total_row']
-             SetLastPage(Math.ceil(totalData/10))
+            const totalData = result.count[0]['total_row']
+            SetLastPage(Math.ceil(totalData / 10))
         }
         getSupporting();
-    },[currentPage])
+    }, [currentPage])
 
-    const tableData= {
+    const tableData = {
         columns, data
-      }; 
+    };
 
 
-    const handlePageClick = (data) =>{
+    const handlePageClick = (data) => {
         setCurrentPage(data.selected + 1)
         console.log(currentPage)
     }
     return (
+        <>
+       
+        <NavPage />
         <div className="Supporting-page">
-            <NavPage />
-            <div className="container">     
-                    <h2>View Supporting</h2>
+            
+            <div className="container">
+                <h2>View Supporting</h2>
+                <h2 style={{marginTop:"50px",color: 'rgb(59, 56, 56)'}}>View Supporting</h2>
+                <button type="button" style={{ float: "right" }} onClick={() => { window.location.href = "./AddSupporting" }} class="btn btn-secondary" id="btn_support">Add Supporting</button>
 
-           <button type="button" style={{float:"right"}} onClick={()=>{window.location.href="./AddSupporting"}} class="btn btn-primary">Add Supporting</button>
 
+                <div className="DataTable">
+                    <DataTableExtensions {...tableData} >
+                        <Datatable
+                            columns={columns}
+                            data={data}
+                            pagination
+                        />
+                    </DataTableExtensions>
+                </div>
 
-           <div className="DataTable">
-        <DataTableExtensions {...tableData} >
-        <Datatable 
-        columns={columns} 
-        data={data}
-        pagination
-        />
-       </DataTableExtensions>
-       </div>  
-
-                        {/* <table className="table" style={{margin:"25px"}}>
+                {/* <table className="table" style={{margin:"25px"}}>
                             <thead>
                                 <tr>
                                     <th>Reference Number</th>
@@ -118,7 +122,7 @@ const SupporingPage = () => {
                                 }
                             </tbody>
                         </table> */}
-                    {/* <ReactPagination
+                {/* <ReactPagination
                 previousLabel={'Previous'}
                 nextLabel={'Next'}
                 breakLabel={'...'}
@@ -138,9 +142,11 @@ const SupporingPage = () => {
                 activeClassName={'active'}
             /> */}
             </div>
-            <br/>
-            <Homefooter/>
+            <br />
+            
         </div>
+        <Homefooter />
+        </>
     )
 }
 

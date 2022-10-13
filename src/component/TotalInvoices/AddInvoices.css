@@ -1,5 +1,18 @@
 .select{
-    width: 20%;
+    width: 100%;
     float: right;
 
+}
+#link_supp{
+  background: rgb(124, 78, 78);
+  color: white;
+}
+#link_supp:hover{
+    background: rgb(110, 60, 60);
+  }
+.Add-invoice-page{
+  background: rgba(212, 190, 190, 0.176);
+}
+.Add-invoice-page .row{
+  width: 100%;
 }

@@ -10,6 +10,38 @@ import { FiEdit } from "react-icons/fi";
 import FileSaver from 'file-saver';
 import Homefooter from "../footer/footer";
 import './Lr.css'
+import './DeliveresdLR.css'
+
+
+const customStyles = {
+  title: {
+    style: {
+      fontColor: 'red',
+      fontWeight: '900',
+    }
+  },
+  rows: {
+    style: {
+      minHeight: '55px'
+    }
+  },
+  headCells: {
+    style: {
+      fontSize: '15px',
+      fontWeight: '500',
+      background:'rgb(253, 76, 27)',
+      color:'white',
+    },
+  },
+  cells: {
+    style: {
+      fontSize: '15px',
+      // fontWeight:'600',
+      background:'rgb(239, 225, 225)	',
+      borderBottom:"1px solid silver"
+    },
+  },
+};
 
 
 const columns = [
@@ -68,8 +100,8 @@ const columns = [
         sortable: false,
         selector: "null",
         cell: (row) => [
-          <div className='droplist'>
-           <input type="date"  
+          <div  className='droplist'>
+           <input style={{width:"100%",background:"rgb(250, 232, 297)",borderRadius:"3px",border:"1px solid gray"}} type="date"  
            value={row.StatusDate}
            onChange={(e)=>{localStorage.setItem("Status_Date",e.target.value)}}
            />
@@ -82,7 +114,7 @@ const columns = [
       selector: "null",
       cell: (row) => [
         <div className='droplist'>
-        <select onChange={ (e) => {
+        <select style={{width:"100%",background:"rgb(250, 232, 297)",borderRadius:"3px"}} onChange={ (e) => {
           const status = e.target.value;
           localStorage.setItem('statusUpload',status)
         }} >
@@ -105,17 +137,9 @@ const columns = [
         sortable: false,
         selector: "null",
         cell: (row) => [
-             <div style={{display:"flex"}}>
-            <button className="editbtn btn-success" style={{width:"80px"}}  onClick={async()=>{
-                const result = await LRDeliverUpdate(row.GatePass,row.LRNo,localStorage.getItem('statusUpload'),localStorage.getItem('Status_Date'))
-                if(result){
-                  localStorage.removeItem("statusUpload")
-                    alert('Updated')
-                    window.location.reload()
-                }
-                console.log(result)
-            }}>Update</button>
-            <button className="editbtn btn-success"  style={{marginLeft:"7px",width:"80px"}} onClick={(e)=>{
+             <div style={{display:"flex",width:"100%"}}>
+            <button className="editbtn btn-secondary" style={{fontSize:"14px",margin:"0 6px 0 0px",borderRadius:"5px",boxShadow:"1px 1px 2px 1px #252525",border:"none"}}>Update</button>
+            <button className="editbtn btn-secondary"  style={{fontSize:"14px",borderRadius:"5px",boxShadow:"1px 1px 2px 1px #252525",border:"none"}} onClick={(e)=>{
                 e.preventDefault();
                 document.getElementById('exampleModal').style.display = 'block';
                 localStorage.setItem('OutLRNo',row.LRNo)
@@ -183,11 +207,14 @@ const DeliveresdLR = () => {
     }
 
     return(
+      <>
+       <NavPage/>
         <div className="TotalInvoices">
-         <NavPage/>
+        
          <div className="container">
          <h1 className="text-dark mn-3">Delivered</h1>
-         <p  style={{marginLeft:"40%"}}>Total DeliveredLR &nbsp; <b style={{fontSize:"25px"}}>{count}</b></p>
+         <h2 style={{marginTop:"50px",color: 'rgb(59, 56, 56)'}} className="text-dark mn-3">Delivered</h2>
+         <p className="text-center" style={{fontSize:"20px" }}>Total DeliveredLR &nbsp; <b style={{fontSize:"25px"}}>{count}</b></p>
          {/* <button type="button" style={{ float: "right"}} onClick={()=>{window.location.href="./AddInvoices"}} class="btn btn-primary">Add Invoice</button> */}
        
          <div className="DataTable">
@@ -196,7 +223,7 @@ const DeliveresdLR = () => {
         columns={columns} 
         data={data}
         pagination
-        
+        customStyles={customStyles}
         />
        </DataTableExtensions>
        </div>        
@@ -259,10 +286,12 @@ const DeliveresdLR = () => {
 
 
 
-<Homefooter/>
 
 
          </div>
+         <Homefooter/>
+
+         </>
     )
 }
 
